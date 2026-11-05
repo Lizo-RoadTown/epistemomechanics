@@ -1,0 +1,31 @@
+# App manifest — declared-vs-derived. Humans write `declared` once; the run wrapper
+# appends to `derived`. The two never mix. A `declared.maturity` above `scaffolded`
+# with a null `derived.last_run` is a visible contradiction — status cannot rot.
+
+declared:
+  slug: "{{APP_SLUG}}"
+  title: "{{APP_NAME}}"
+  visualizes: "{{ONE_LINE}}"            # what the 3D/viz surface shows
+  simulates: ""                          # the model/computation the core performs
+  research_question: "{{RESEARCH_QUESTION}}"   # the epistemomechanics question this app serves
+  inputs:
+    - name: params
+      spec: "describe the typed inputs (see core/schema.py)"
+  outputs:
+    - name: result
+      spec: "describe outputs + export formats (CSV / NPZ / PNG)"
+  model_assumptions:
+    - "state assumptions/approximations frankly"
+    - "deterministic given (inputs, seed)"
+  core_entrypoint: "core/simulate.py:run"
+  maturity: scaffolded                   # scaffolded | working | validated
+
+derived:                                  # machine-appended; never hand-edited
+  last_run:
+    at: null
+    git_sha: null
+    input_hash: null
+    output_path: null
+    seed: null
+  produced_figures: []                    # [{path, run_id, git_sha, at}]
+  validated_findings: []                  # finding ids this app's output supports

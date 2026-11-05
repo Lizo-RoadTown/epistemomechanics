@@ -1,0 +1,9 @@
+# {{APP_NAME}} — backend (science core + API)
+numpy>=1.26
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pytest>=8.0
+# add scipy / jax as the model needs them:
+# scipy>=1.13
+# jax>=0.4        # when you need autodiff / GPU / vectorized sweeps

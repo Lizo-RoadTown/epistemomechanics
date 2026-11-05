@@ -1,0 +1,11 @@
+{
+  "name": "epistemomechanics",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A new scientific field and the scientific-visualization + simulation applications that produce and express its domain knowledge.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "new-app": "echo \"Invoke the new-viz-app skill (skills/new-viz-app/SKILL.md) to stamp apps/_template.\""
+  }
+}

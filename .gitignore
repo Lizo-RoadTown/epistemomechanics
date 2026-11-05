@@ -1,0 +1,53 @@
+# Secrets / env — never commit. init writes .env with telemetry credentials.
+.env
+.env.local
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+
+# Node (if this project grows a JS toolchain)
+node_modules/
+
+# Per-machine Claude Code state
+.claude/logs/
+.claude/settings.local.json
+
+# MCP config — references a secret env var by name; per-machine, not committed
+.mcp.json
+
+# Architecture snapshots — auto-written by the tapestry-discipline SessionStart
+# hook every session. Local feedback, not repo history. .gitkeep preserves the dir.
+docs/architecture-snapshots/*
+!docs/architecture-snapshots/.gitkeep
+
+# ── epistemomechanics (sci-viz monorepo) additions ──
+# Large source data + rendered outputs: track provenance, not the bytes.
+data/raw/**
+!data/raw/.gitkeep
+results/exports/**
+!results/exports/.gitkeep
+apps/*/data/runs/**
+!apps/*/data/runs/.gitkeep
+# Node / build
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+# Large 3D / render assets
+*.glb
+*.gltf
+*.ply
+*.vtk
+*.npz

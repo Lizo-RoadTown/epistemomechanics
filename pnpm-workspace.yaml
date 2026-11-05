@@ -1,0 +1,5 @@
+packages:
+  - "apps/*/frontend"
+  - "packages/*"
+# Note: apps/_template is the stamp, not a live workspace member — its frontend
+# becomes a workspace member once an app is created from it (apps/<name>/frontend).
